@@ -1,0 +1,80 @@
+body {
+    background-color: #858b97;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 500px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.calc-container {
+    width: 350px;
+    border-radius: 7px;
+    border-style: solid;
+}
+
+.display {
+    width: 350px;
+    height: 100px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border-width: 1px;
+    background-color: black;
+}
+
+.btn-container {
+    width: 100%;
+    height: 395px;
+    background-color: black;
+}
+
+h2 {
+    padding-right: 30px;
+    font-size: 48px;
+    font-family: 'Dosis', sans-serif;
+    color: white;
+}
+
+
+/* div {
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+} */
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 77px;
+}
+
+.btn-number {
+    background-color: #303030;
+    color: #8d8d8d;
+}
+
+.btn-operand {
+    background-color: #F18D05;
+    color: #f2dec6
+}
+
+.btn-utility {
+    background-color: #9d9d9d;
+}
+
+.btn {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+}
+
+.btn.btn-0 {
+    width: 140px;
+    border-radius: 25px;
+}
