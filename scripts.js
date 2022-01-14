@@ -19,9 +19,11 @@ const btnEquals = document.querySelector(".btn-equals");
 const btnDecimal = document.querySelector(".btn-decimal");
 const buttonsNumber = document.querySelectorAll(".btn-number");
 const displayText = document.querySelector(".display-text");
+let firstNumber = 0;
+let secondNumber = 0;
 let currentDisplay = "0";
-let firstNumber;
-let secondNumber;
+let calculated = false;
+
 
 
 
@@ -37,6 +39,10 @@ function updateDisplay() {
 
 updateDisplay();
 
+function setFirstNumber() {
+    firstNumber = Number(currentDisplay);
+}
+
 
 
 
@@ -48,12 +54,15 @@ updateDisplay();
 btnClear.addEventListener("click", () => {
     currentDisplay = "0";
     updateDisplay();
+    calculated = false;
 });
 
 //REFACTOR THIS WITH A FOR LOOP
 
+/////////////////NUMBERS///////////////////////
+
 btn0.addEventListener("click", () => {
-    if (displayText.innerText != "0") {
+    if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "0";
     } else {
         currentDisplay = "0";
@@ -62,82 +71,115 @@ btn0.addEventListener("click", () => {
 });
 
 btn1.addEventListener("click", () => {
-    if (displayText.innerText != "0") {
+    if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "1";
-    } else {
+    } else if (displayText.innerText === "0" && !calculated) {
         currentDisplay = "1";
+    } else {
+        return
     }
     updateDisplay();
 });
 
 btn2.addEventListener("click", () => {
-    if (displayText.innerText != "0") {
+    if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "2";
-    } else {
+    } else if (displayText.innerText === "0" && !calculated) {
         currentDisplay = "2";
+    } else {
+        return
     }
     updateDisplay();
 });
 
 btn3.addEventListener("click", () => {
-    if (displayText.innerText != "0") {
+    if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "3";
-    } else {
+    } else if (displayText.innerText === "0" && !calculated) {
         currentDisplay = "3";
+    } else {
+        return
     }
     updateDisplay();
 });
 
 btn4.addEventListener("click", () => {
-    if (displayText.innerText != "0") {
+    if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "4";
-    } else {
+    } else if (displayText.innerText === "0" && !calculated) {
         currentDisplay = "4";
+    } else {
+        return
     }
     updateDisplay();
 });
 
 btn5.addEventListener("click", () => {
-    if (displayText.innerText != "0") {
+    if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "5";
-    } else {
+    } else if (displayText.innerText === "0" && !calculated) {
         currentDisplay = "5";
+    } else {
+        return
     }
     updateDisplay();
 });
 
 btn6.addEventListener("click", () => {
-    if (displayText.innerText != "0") {
+    if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "6";
-    } else {
+    } else if (displayText.innerText === "0" && !calculated) {
         currentDisplay = "6";
+    } else {
+        return
     }
     updateDisplay();
 });
 
 btn7.addEventListener("click", () => {
-    if (displayText.innerText != "0") {
+    if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "7";
-    } else {
+    } else if (displayText.innerText === "0" && !calculated) {
         currentDisplay = "7";
+    } else {
+        return
     }
     updateDisplay();
 });
 
 btn8.addEventListener("click", () => {
-    if (displayText.innerText != "0") {
+    if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "8";
-    } else {
+    } else if (displayText.innerText === "0" && !calculated) {
         currentDisplay = "8";
+    } else {
+        return
     }
     updateDisplay();
 });
 
 btn9.addEventListener("click", () => {
-    if (displayText.innerText != "0") {
+    if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "9";
-    } else {
+    } else if (displayText.innerText === "0" && !calculated) {
         currentDisplay = "9";
+    } else {
+        return
     }
     updateDisplay();
 });
+
+///////////UTILITIES AND OPERANDS//////////////
+
+btnPercent.addEventListener("click", () => {
+    calculated = true;
+    setFirstNumber();
+    firstNumber = firstNumber / 100;
+    currentDisplay = firstNumber;
+    updateDisplay();
+});
+
+btnAdd.addEventListener("click", () => {
+    setFirstNumber();
+
+})
