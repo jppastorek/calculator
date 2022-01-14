@@ -17,13 +17,15 @@ body {
 }
 
 .display {
-    width: 350px;
-    height: 100px;
+    width: 330px;
+    height: 60px;
     display: flex;
     justify-content: end;
     align-items: center;
-    border-width: 1px;
-    background-color: black;
+    border-style: solid;
+    border-color: black;
+    border-width: 20px 10px;
+    background-color: rgb(46, 45, 45);
 }
 
 .btn-container {
@@ -33,7 +35,7 @@ body {
 }
 
 h2 {
-    padding-right: 30px;
+    padding-right: 20px;
     font-size: 48px;
     font-family: 'Dosis', sans-serif;
     color: white;
@@ -56,11 +58,13 @@ h2 {
 .btn-number {
     background-color: #303030;
     color: #8d8d8d;
+    font-weight: bold;
 }
 
 .btn-operand {
     background-color: #F18D05;
-    color: #f2dec6
+    color: #f2dec6;
+    font-weight: bold;
 }
 
 .btn-utility {
@@ -69,12 +73,13 @@ h2 {
 
 .btn {
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     font-size: 24px;
+    border: none;
 }
 
 .btn.btn-0 {
-    width: 140px;
+    width: 150px;
     border-radius: 25px;
 }
