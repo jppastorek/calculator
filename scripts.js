@@ -23,7 +23,11 @@ let firstNumber = 0;
 let secondNumber = 0;
 let currentDisplay = "0";
 let calculated = false;
-
+let add = false;
+let subtract = false;
+let multiply = false;
+let divide = false;
+let answer = 0;
 
 
 
@@ -41,9 +45,20 @@ updateDisplay();
 
 function setFirstNumber() {
     firstNumber = Number(currentDisplay);
+    calculated = true;
 }
 
+function setSecondNumber() {
+    secondNumber = Number(currentDisplay);
+    calculated = true;
+}
 
+function resetOperands() {
+    add = false;
+    subtract = false;
+    multiply = false;
+    divide = false;
+}
 
 
 
@@ -73,8 +88,9 @@ btn0.addEventListener("click", () => {
 btn1.addEventListener("click", () => {
     if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "1";
-    } else if (displayText.innerText === "0" && !calculated) {
+    } else if (displayText.innerText === "0" || calculated) {
         currentDisplay = "1";
+        calculated = false;
     } else {
         return
     }
@@ -84,8 +100,9 @@ btn1.addEventListener("click", () => {
 btn2.addEventListener("click", () => {
     if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "2";
-    } else if (displayText.innerText === "0" && !calculated) {
+    } else if (displayText.innerText === "0" || calculated) {
         currentDisplay = "2";
+        calculated = false;
     } else {
         return
     }
@@ -95,8 +112,9 @@ btn2.addEventListener("click", () => {
 btn3.addEventListener("click", () => {
     if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "3";
-    } else if (displayText.innerText === "0" && !calculated) {
+    } else if (displayText.innerText === "0" || calculated) {
         currentDisplay = "3";
+        calculated = false;
     } else {
         return
     }
@@ -106,8 +124,9 @@ btn3.addEventListener("click", () => {
 btn4.addEventListener("click", () => {
     if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "4";
-    } else if (displayText.innerText === "0" && !calculated) {
+    } else if (displayText.innerText === "0" || calculated) {
         currentDisplay = "4";
+        calculated = false;
     } else {
         return
     }
@@ -117,8 +136,9 @@ btn4.addEventListener("click", () => {
 btn5.addEventListener("click", () => {
     if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "5";
-    } else if (displayText.innerText === "0" && !calculated) {
+    } else if (displayText.innerText === "0" || calculated) {
         currentDisplay = "5";
+        calculated = false;
     } else {
         return
     }
@@ -128,8 +148,9 @@ btn5.addEventListener("click", () => {
 btn6.addEventListener("click", () => {
     if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "6";
-    } else if (displayText.innerText === "0" && !calculated) {
+    } else if (displayText.innerText === "0" || calculated) {
         currentDisplay = "6";
+        calculated = false;
     } else {
         return
     }
@@ -139,8 +160,9 @@ btn6.addEventListener("click", () => {
 btn7.addEventListener("click", () => {
     if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "7";
-    } else if (displayText.innerText === "0" && !calculated) {
+    } else if (displayText.innerText === "0" || calculated) {
         currentDisplay = "7";
+        calculated = false;
     } else {
         return
     }
@@ -150,8 +172,9 @@ btn7.addEventListener("click", () => {
 btn8.addEventListener("click", () => {
     if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "8";
-    } else if (displayText.innerText === "0" && !calculated) {
+    } else if (displayText.innerText === "0" || calculated) {
         currentDisplay = "8";
+        calculated = false;
     } else {
         return
     }
@@ -161,8 +184,9 @@ btn8.addEventListener("click", () => {
 btn9.addEventListener("click", () => {
     if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
         currentDisplay += "9";
-    } else if (displayText.innerText === "0" && !calculated) {
+    } else if (displayText.innerText === "0" || calculated) {
         currentDisplay = "9";
+        calculated = false;
     } else {
         return
     }
@@ -181,5 +205,37 @@ btnPercent.addEventListener("click", () => {
 
 btnAdd.addEventListener("click", () => {
     setFirstNumber();
+    add = true;
+});
 
-})
+btnSubtract.addEventListener("click", () => {
+    setFirstNumber();
+    subtract = true;
+});
+
+btnMultipy.addEventListener("click", () => {
+    setFirstNumber();
+    multiply = true;
+});
+
+btnDivide.addEventListener("click", () => {
+    setFirstNumber();
+    divide = true;
+});
+
+btnEquals.addEventListener("click", () => {
+    setSecondNumber();
+    if (add) {
+        answer = firstNumber + secondNumber;
+    } else if (subtract) {
+        answer = firstNumber - secondNumber;
+    } else if (multiply) {
+        answer = firstNumber * secondNumber;
+    } else if (divide) {
+        answer = firstNumber / secondNumber;
+    }
+    currentDisplay = answer;
+    updateDisplay();
+    calculated = true;
+    resetOperands();
+});
