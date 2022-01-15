@@ -28,6 +28,8 @@ let subtract = false;
 let multiply = false;
 let divide = false;
 let answer = 0;
+let hasDecimal = false;
+let negative = false;
 
 
 
@@ -70,6 +72,7 @@ btnClear.addEventListener("click", () => {
     currentDisplay = "0";
     updateDisplay();
     calculated = false;
+    hasDecimal = false;
 });
 
 //REFACTOR THIS WITH A FOR LOOP
@@ -239,3 +242,26 @@ btnEquals.addEventListener("click", () => {
     calculated = true;
     resetOperands();
 });
+
+btnDecimal.addEventListener("click", () => {
+    if (!hasDecimal) {
+        if (displayText.innerText != "0" && displayText.innerText.length < 12 && !calculated) {
+            currentDisplay += ".";
+        } else if (displayText.innerText === "0" || calculated) {
+            currentDisplay = "0.";
+            calculated = false;
+        } else {
+            return;
+        }
+        updateDisplay();
+        hasDecimal = true;
+    } else {
+        return;
+    }
+});
+
+btnNegative.addEventListener("click", () => {
+    if (!negative) {
+
+    }
+})
