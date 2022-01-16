@@ -39,6 +39,9 @@ let negative = false;
 
 
 function updateDisplay() {
+    if (currentDisplay.length > 12) {
+        currentDisplay = currentDisplay.slice(0, (currentDisplay.length - 12) * -1);
+    }
     displayText.innerText = currentDisplay;
 }
 
@@ -260,7 +263,7 @@ btnDivide.addEventListener("click", () => {
     divide = true;
     hasDecimal = false;
     unselectButtons();
-    btnMultipy.classList.add("selected");
+    btnDivide.classList.add("selected");
 });
 
 btnEquals.addEventListener("click", () => {
@@ -272,7 +275,11 @@ btnEquals.addEventListener("click", () => {
     } else if (multiply) {
         answer = firstNumber * secondNumber;
     } else if (divide) {
-        answer = firstNumber / secondNumber;
+        if (secondNumber === 0) {
+            answer = "u can't do dat";
+        } else {
+            answer = firstNumber / secondNumber;
+        }
     }
     currentDisplay = answer;
     updateDisplay();
