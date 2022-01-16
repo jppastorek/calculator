@@ -208,24 +208,28 @@ btnPercent.addEventListener("click", () => {
 
 btnAdd.addEventListener("click", () => {
     setFirstNumber();
+    resetOperands();
     add = true;
     hasDecimal = false;
 });
 
 btnSubtract.addEventListener("click", () => {
     setFirstNumber();
+    resetOperands();
     subtract = true;
     hasDecimal = false;
 });
 
 btnMultipy.addEventListener("click", () => {
     setFirstNumber();
+    resetOperands();
     multiply = true;
     hasDecimal = false;
 });
 
 btnDivide.addEventListener("click", () => {
     setFirstNumber();
+    resetOperands();
     divide = true;
     hasDecimal = false;
 });
