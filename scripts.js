@@ -63,6 +63,14 @@ function resetOperands() {
 }
 
 
+function unselectButtons() {
+    btnAdd.classList.remove("selected");
+    btnSubtract.classList.remove("selected");
+    btnMultipy.classList.remove("selected");
+    btnDivide.classList.remove("selected");
+}
+
+
 
 ///////////////////////////////EVENT LISTENERS/////////////////////
 
@@ -73,6 +81,7 @@ btnClear.addEventListener("click", () => {
     updateDisplay();
     calculated = false;
     hasDecimal = false;
+    unselectButtons();
 });
 
 //REFACTOR THIS WITH A FOR LOOP
@@ -86,6 +95,7 @@ btn0.addEventListener("click", () => {
         currentDisplay = "0";
     }
     updateDisplay();
+    unselectButtons();
 });
 
 btn1.addEventListener("click", () => {
@@ -98,6 +108,7 @@ btn1.addEventListener("click", () => {
         return
     }
     updateDisplay();
+    unselectButtons();
 });
 
 btn2.addEventListener("click", () => {
@@ -110,6 +121,7 @@ btn2.addEventListener("click", () => {
         return
     }
     updateDisplay();
+    unselectButtons();
 });
 
 btn3.addEventListener("click", () => {
@@ -122,6 +134,7 @@ btn3.addEventListener("click", () => {
         return
     }
     updateDisplay();
+    unselectButtons();
 });
 
 btn4.addEventListener("click", () => {
@@ -134,6 +147,7 @@ btn4.addEventListener("click", () => {
         return
     }
     updateDisplay();
+    unselectButtons();
 });
 
 btn5.addEventListener("click", () => {
@@ -146,6 +160,7 @@ btn5.addEventListener("click", () => {
         return
     }
     updateDisplay();
+    unselectButtons();
 });
 
 btn6.addEventListener("click", () => {
@@ -158,6 +173,7 @@ btn6.addEventListener("click", () => {
         return
     }
     updateDisplay();
+    unselectButtons();
 });
 
 btn7.addEventListener("click", () => {
@@ -170,6 +186,7 @@ btn7.addEventListener("click", () => {
         return
     }
     updateDisplay();
+    unselectButtons();
 });
 
 btn8.addEventListener("click", () => {
@@ -182,6 +199,7 @@ btn8.addEventListener("click", () => {
         return
     }
     updateDisplay();
+    unselectButtons();
 });
 
 btn9.addEventListener("click", () => {
@@ -194,6 +212,7 @@ btn9.addEventListener("click", () => {
         return
     }
     updateDisplay();
+    unselectButtons();
 });
 
 ///////////UTILITIES AND OPERANDS//////////////
@@ -204,6 +223,7 @@ btnPercent.addEventListener("click", () => {
     firstNumber = firstNumber / 100;
     currentDisplay = firstNumber;
     updateDisplay();
+    unselectButtons();
 });
 
 btnAdd.addEventListener("click", () => {
@@ -211,6 +231,8 @@ btnAdd.addEventListener("click", () => {
     resetOperands();
     add = true;
     hasDecimal = false;
+    unselectButtons();
+    btnAdd.classList.add("selected");
 });
 
 btnSubtract.addEventListener("click", () => {
@@ -218,6 +240,8 @@ btnSubtract.addEventListener("click", () => {
     resetOperands();
     subtract = true;
     hasDecimal = false;
+    unselectButtons();
+    btnSubtract.classList.add("selected");
 });
 
 btnMultipy.addEventListener("click", () => {
@@ -225,6 +249,8 @@ btnMultipy.addEventListener("click", () => {
     resetOperands();
     multiply = true;
     hasDecimal = false;
+    unselectButtons();
+    btnMultipy.classList.add("selected");
 });
 
 btnDivide.addEventListener("click", () => {
@@ -232,6 +258,8 @@ btnDivide.addEventListener("click", () => {
     resetOperands();
     divide = true;
     hasDecimal = false;
+    unselectButtons();
+    btnMultipy.classList.add("selected");
 });
 
 btnEquals.addEventListener("click", () => {
@@ -250,6 +278,7 @@ btnEquals.addEventListener("click", () => {
     calculated = true;
     resetOperands();
     hasDecimal = false;
+    unselectButtons();
 });
 
 btnDecimal.addEventListener("click", () => {
