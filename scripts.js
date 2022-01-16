@@ -82,6 +82,7 @@ btnClear.addEventListener("click", () => {
     calculated = false;
     hasDecimal = false;
     unselectButtons();
+    negative = false;
 });
 
 //REFACTOR THIS WITH A FOR LOOP
@@ -299,7 +300,15 @@ btnDecimal.addEventListener("click", () => {
 });
 
 btnNegative.addEventListener("click", () => {
-    if (!negative) {
-
+    if (currentDisplay != "0") {
+        if (!negative) {
+            currentDisplay = "-" + currentDisplay;
+            updateDisplay();
+            negative = true;
+        } else {
+            currentDisplay = currentDisplay.substring(1);
+            updateDisplay();
+            negative = false;
+        }
     }
 })
