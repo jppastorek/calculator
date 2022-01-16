@@ -209,21 +209,25 @@ btnPercent.addEventListener("click", () => {
 btnAdd.addEventListener("click", () => {
     setFirstNumber();
     add = true;
+    hasDecimal = false;
 });
 
 btnSubtract.addEventListener("click", () => {
     setFirstNumber();
     subtract = true;
+    hasDecimal = false;
 });
 
 btnMultipy.addEventListener("click", () => {
     setFirstNumber();
     multiply = true;
+    hasDecimal = false;
 });
 
 btnDivide.addEventListener("click", () => {
     setFirstNumber();
     divide = true;
+    hasDecimal = false;
 });
 
 btnEquals.addEventListener("click", () => {
@@ -241,6 +245,7 @@ btnEquals.addEventListener("click", () => {
     updateDisplay();
     calculated = true;
     resetOperands();
+    hasDecimal = false;
 });
 
 btnDecimal.addEventListener("click", () => {
